@@ -79,6 +79,22 @@ public class CalculatorUI {
         window.setResizable(false);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
+
+        btnAdd.setText("+ (जोडा)");
+        btnSub.setText("- (वजा)");
+        btnMul.setText("× (गुणा)");
+        btnDiv.setText("÷ (भाग)");
+        btnEqual.setText("= (बरोबर)");
+
+
+        JMenuBar menuBar = new JMenuBar();
+        JMenu helpMenu = new JMenu("Help");
+        JMenuItem aboutItem = new JMenuItem("About Calculator");
+        aboutItem.addActionListener(e -> 
+            JOptionPane.showMessageDialog(window, "Open Source Calculator\nTranslated Version\nBy Sandesh Shinde"));
+        helpMenu.add(aboutItem);
+        menuBar.add(helpMenu);
+        window.setJMenuBar(menuBar);
     }
 
     public double calculate(double firstNumber, double secondNumber, char operator) {
